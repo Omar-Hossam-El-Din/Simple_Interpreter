@@ -1,0 +1,107 @@
+# depslib dependency file v1.0
+1590280732 source:c:\users\beso_\desktop\last_test\main.c
+	<stdio.h>
+	<stdlib.h>
+	"load.h"
+	"stack.h"
+	"infix.h"
+	"tree.h"
+	"heap.h"
+
+1590282117 c:\users\beso_\desktop\last_test\load.h
+	"tree.h"
+	"heap.h"
+
+1590110747 c:\users\beso_\desktop\last_test\stack.h
+
+1590108372 c:\users\beso_\desktop\last_test\infix.h
+
+1590274510 c:\users\beso_\desktop\last_test\tree.h
+
+1590279470 c:\users\beso_\desktop\last_test\heap.h
+
+1590282333 source:c:\users\beso_\desktop\last_test\heap.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"heap.h"
+
+1590107975 source:c:\users\beso_\desktop\last_test\infix.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"stack.h"
+	"infix.h"
+
+1590282415 source:c:\users\beso_\desktop\last_test\load.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"infix.h"
+	"load.h"
+	"tree.h"
+	"heap.h"
+
+1590110788 source:c:\users\beso_\desktop\last_test\stack.c
+	<stdio.h>
+	<stdlib.h>
+	"stack.h"
+
+1590276065 source:c:\users\beso_\desktop\last_test\tree.c
+	<stdio.h>
+	<stdlib.h>
+	"tree.h"
+
+1590288449 source:c:\users\omar\desktop\term 4\data structure 1\final project\ds1 final project\heap.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"heap.h"
+
+1590288449 c:\users\omar\desktop\term 4\data structure 1\final project\ds1 final project\heap.h
+
+1590288449 source:c:\users\omar\desktop\term 4\data structure 1\final project\ds1 final project\infix.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"stack.h"
+	"infix.h"
+
+1590288449 c:\users\omar\desktop\term 4\data structure 1\final project\ds1 final project\stack.h
+
+1590108374 c:\users\omar\desktop\term 4\data structure 1\final project\ds1 final project\infix.h
+
+1592142738 source:c:\users\omar\desktop\term 4\data structure 1\final project\ds1 final project\load.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"infix.h"
+	"load.h"
+	"tree.h"
+	"heap.h"
+
+1590282118 c:\users\omar\desktop\term 4\data structure 1\final project\ds1 final project\load.h
+	"tree.h"
+	"heap.h"
+
+1590288449 c:\users\omar\desktop\term 4\data structure 1\final project\ds1 final project\tree.h
+
+1590538212 source:c:\users\omar\desktop\term 4\data structure 1\final project\ds1 final project\main.c
+	<stdio.h>
+	<stdlib.h>
+	"load.h"
+	"stack.h"
+	"infix.h"
+	"tree.h"
+	"heap.h"
+
+1590288449 source:c:\users\omar\desktop\term 4\data structure 1\final project\ds1 final project\stack.c
+	<stdio.h>
+	<stdlib.h>
+	"stack.h"
+
+1590288449 source:c:\users\omar\desktop\term 4\data structure 1\final project\ds1 final project\tree.c
+	<stdio.h>
+	<stdlib.h>
+	"tree.h"
+

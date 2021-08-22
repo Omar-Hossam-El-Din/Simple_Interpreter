@@ -1,0 +1,138 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "infix.h"
+//char* getVar(char* equation)
+//{
+//    char* name;
+//    name=strtok(equation,"=");
+//    // returns variable name
+//    return name;
+//}
+
+int check(char* equation)
+{
+
+    int flag1=0,flag2=0,flag3=1,flag4=1,i;
+    char* eqcopy;
+    char* token;
+
+   // first check if there are any invalid symbols
+
+   for(i=0;i<strlen(equation);i++)
+   {
+       if(equation[i]=='+'|| equation[i]=='=' || equation[i]==' ' || equation[i]=='-' || equation[i]=='/'|| equation[i]=='*'|| equation[i]=='^'|| equation[i]=='('|| equation[i]==')' || equation[i]=='.' || isalpha(equation[i]) || isdigit(equation[i]))
+       {
+           flag1=1;
+
+       }
+       else
+       {
+          printf("%c\n",equation[i]);
+          flag1=0;
+          printf("Unknown Symbol Found: %c\n",equation[i]);
+          break;
+       }
+
+
+   }
+
+
+
+   // then check if = is missing in the expression
+
+   for(i=0;i<strlen(equation);i++)
+   {
+       if(equation[i]=='=')
+       {
+         flag2=1;
+         break;
+       }
+
+
+
+
+   }
+   if(flag2==0)
+   printf("Equal Sign doesn't exist\n");
+
+
+
+   // then check for unclosed parenthesis
+
+   for(i=0;i<strlen(equation);i++)
+   {
+       if(equation[i]=='(')
+       flag3=0;
+       if(equation[i]==')')
+       flag3=1;
+
+   }
+   if(flag3==0)
+   printf("Unclosed Parenthesis\n");
+
+
+   // lastly check if left hand side has more than 1 variable
+
+    eqcopy=malloc(strlen(equation+1));
+    strcpy(eqcopy,equation);
+    token=strtok(eqcopy,"=");
+    for(i=0;i<strlen(token);i++)
+    {
+        if(token[i]=='+'|| token[i]=='-' || token[i]=='/'|| token[i]=='*'|| token[i]=='^'|| token[i]=='('|| token[i]==')' || token[i]=='.')
+       {
+        flag4=0;
+        printf("More than 1 variable found in left hand side\n");
+        break;
+       }
+        else
+        flag4=1;
+    }
+
+
+return flag1&&flag2&&flag3&&flag4;
+
+
+}
+
+void loadFile(char* filename)
+{
+    FILE* file;
+    file=fopen(filename,"r");
+    if (file==NULL)
+    {
+        printf("File Doesn't Exist\n");
+        exit(1);
+    }
+    char equation[30];
+    char* variable_name;
+    char postfix[100];
+    float result;
+    while(fgets(equation,31,file))
+    {
+        // checks input for invalid expressions and terminates if so
+
+        printf("%s\n",equation);
+        if(check(equation))
+        {
+           // put variable name and result
+            variable_name=strtok(equation,"=");
+            infixToPostfix(equation,postfix);
+            result=evaluatePostfix(postfix);
+//            put(variable,result);
+//
+printf("%s\n",postfix);
+printf("%f\n",result);
+strcpy(postfix,"");
+        }
+        else
+        {
+            printf("Invalid Expression\n");
+            exit(1);
+        }
+
+    }
+
+
+
+}
